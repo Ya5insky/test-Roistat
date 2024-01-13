@@ -1,0 +1,236 @@
+.wrapper__main {
+    margin-top: 250px;
+    .main__container {
+        position: relative;
+        .main__gradient {
+            background: radial-gradient(50% 50% at 50% 50%, rgba(229,86,223,0) 0%, rgba(229,86,223,0.4) 100%);
+            filter: blur(321.5px);
+            right: -1000px;
+            top: -800px;
+            border-radius: 1398px;
+            width: 1400px;
+            height: 1400px;
+            z-index: -1;
+            position: absolute;
+        }
+        .main__img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .img__star {
+                width: 25%;
+                z-index: -1;
+                position: absolute;
+                left: 75%;
+                top: -185px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .main__content {
+            position: relative;
+            z-index: 2;
+            .main__title {
+                text-transform: uppercase;
+                position: relative;
+                margin-bottom: 42px;
+                .title__white {
+                    position: relative;
+                    .title__white-threadOne {
+                        position: absolute;
+                        top: -26px;
+                        left: 26px;
+                    }
+                    .title__white-threadOne::before {
+                        content: '';
+                        position: absolute;
+                        height: 377px;
+                        width: 2px;
+                        z-index: 6;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $pink;
+                    }
+                    .title__white-threadOne::after {
+                        content: '';
+                        position: absolute;
+                        z-index: 5;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 3px;
+                        background: $blackGray;
+                        bottom: -2px;
+                        left: -2px;
+                    }
+                    h2 {
+                        transform: rotate(7deg);
+                        font-weight: 900;
+                        font-family: 'Unbounded';
+                        font-size: 160px;
+                    }
+
+                    .title__white-threadTwo {
+                        position: absolute;
+                        top: 70px;
+                        right: 30px;
+                    }
+                    .title__white-threadTwo::before{
+                        content: '';
+                        position: absolute;
+                        height: 1000px;
+                        width: 2px;
+                        z-index: 6;
+                        bottom: 0;
+                        left: -405px;
+                        background-color: $lightBlue;
+                    }
+                    .title__white-threadTwo::after{
+                        content: '';
+                        position: absolute;
+                        z-index: 0;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 3px;
+                        background: $blackGray;
+                        bottom: -2px;
+                        left: -407px;
+                    }
+
+                }
+                .title__pink {
+                    color: $pink;
+                    position: relative;
+                    h2 {
+                        font-weight: 900;
+                        font-family: 'Unbounded';
+                        font-size: 160px;
+                    }
+                }
+
+                .title__pink::after {
+                    content: '';
+                    position: absolute;
+                    width: 189px;
+                    height: 138px;
+                    background: url(../../img/sale.svg);
+                    background-size: contain;
+                    bottom: -94px;
+                    left: -50px;
+                }
+            }
+
+            .main__description {
+                margin-left: 17%;
+                width: 31%;
+                span {
+                    margin-bottom: 32px;
+                    display: inline-block;
+                    font-size: 18px;
+                    line-height: 150%;
+                    color: $lightBlue2;
+                }
+                .description__form {
+                    display: flex;
+                    align-items: center;
+                    button {
+                        background: $lightBlue;
+                        border-radius: 16px;
+                        padding: 16px 24px;
+                        color: $white;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        z-index: 1;
+                        cursor: pointer;
+                        font-family: 'Unbounded';
+                        font-size: 16px;
+                        font-weight: 500;
+                        width: 320px;
+                        max-width: 100%;
+                    }
+
+                    button:hover{
+                        background: $purple;
+                    }
+                }
+            }
+        }
+    }
+
+    .ticker__container {
+        position: relative;
+        height: 330px;
+        width: 100%;
+        top: -45px;
+        .ticker__blue {
+            position: relative;
+            display: flex;
+            transform: rotate(-13deg);
+            z-index: 1;
+            .ticker__background-blue{
+                border: 1px solid #323232;
+                background: rgba(29, 29, 29, 0.10);
+                box-shadow: 14.219px 15.234px 43.672px 0px rgba(194, 194, 194, 0.05) inset, 0px 65px 130px -5.078px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(19px);
+                padding: 20px;
+                position: absolute;
+                width: 3000px;
+                left: -70px;
+                .ticker__wrapper-blue{
+                    animation: ticker 45s linear infinite;
+                    display: flex;
+                    .ticker__item {
+                        white-space: nowrap;
+                        flex-shrink: 0;
+                        padding: 0 32px;
+                    }
+                    .ticker_text {
+                        -webkit-text-fill-color: transparent;
+                        -webkit-text-stroke: 1px $lightBlue;
+                        font-family: 'SuisseIntl';
+                        font-size: 40px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .ticker__yellow {
+            margin-top: 100px;
+            position: relative;
+            height: 330px;
+            width: 100%;
+            transform: rotate(-5deg);
+            .ticker__background-yellow{
+                border: 1px solid #323232;
+                background: rgba(29, 29, 29, 0.10);
+                box-shadow: 14.219px 15.234px 43.672px 0px rgba(194, 194, 194, 0.05) inset, 0px 65px 130px -5.078px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(19px);
+                padding: 20px;
+                position: absolute;
+                width: 3000px;
+                .ticker__wrapper-yellow{
+                    animation: ticker 40s linear infinite;
+                    display: flex;
+                    .ticker__item {
+                        white-space: nowrap;
+                        flex-shrink: 0;
+                        padding: 0 32px;
+                    }
+                    .ticker_text {
+                        -webkit-text-fill-color: transparent;
+                        -webkit-text-stroke: 1px $yellow;
+                        font-family: 'SuisseIntl';
+                        font-size: 40px;
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

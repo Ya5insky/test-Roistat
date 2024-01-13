@@ -1,0 +1,200 @@
+@media screen and (max-width: 1350px) {
+    .container {
+        padding: 0 32px;
+    }
+    .wrapper__main {
+        margin-top: 170px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__white h2 {
+        font-size: 120px
+    }
+    .wrapper__main .main__container .main__content .main__title .title__pink h2 {
+        font-size: 120px
+    }
+
+    .wrapper__main .main__container .main__img .img__star {
+        left: 72%;
+        top: -110px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__pink::after {
+        width: 125px;
+        height: 92px;
+        bottom: -60px;
+        left: -18px;
+    }
+
+    .wrapper__main .main__container .main__content .main__description {
+        width: 38%;
+        span {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+    }
+
+    .wrapper__main .main__container .main__content .main__title {
+        margin-bottom: 20px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        bottom: 15px;
+        left: -300px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        bottom: 12px;
+        left: -302px;
+    }
+}
+
+
+@media screen and (max-width: 1023px) { 
+    .wrapper__backgroud {
+        background-size: 1024px;
+    }    
+
+    .wrapper__main .main__container .main__content .main__title .title__white h2 {
+        font-size: 90px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__pink h2 {
+        font-size: 90px;
+    }
+
+    .wrapper__main .main__container .main__content .main__description {
+        width: 50%;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        bottom: 23px;
+        left: -200px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        bottom: 21px;
+        left: -202px;
+    
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadOne::before {
+        bottom: -10px;
+        left: -13px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadOne::after {
+        bottom: -13px;
+        left: -15px;
+    }
+    .wrapper__main .main__container .main__content .main__title {
+        margin-bottom: 16px;
+    }
+
+    .wrapper__main .ticker__container {
+        top: -21px;
+    }
+
+    .wrapper__main .ticker__container .ticker__yellow {
+        margin-top: 80px;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        bottom: 27px;
+        left: -173px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        bottom: 24px;
+        left: -175px;
+    }
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .wrapper__header .header__container .header__backgroud .header__nav .nav__site  {
+        display: none;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .wrapper__header .header__container .header__backgroud .header__burger-btn {
+        display: block;
+        top: 16px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        bottom: 25px;
+        left: -185px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .wrapper__main .main__container .main__content .main__title .title__white h2 {
+        font-size: 46px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__pink h2 {
+        font-size: 46px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        bottom: 44px;
+        left: -92px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        bottom: 41px;
+        left: -94px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadOne::before {
+        bottom: -22px;
+        left: -17px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadOne::after {
+        bottom: -25px;
+        left: -19px;
+    }
+
+    .wrapper__main .main__container .main__content .main__title .title__pink::after {
+        bottom: -76px;
+        left: 86px;
+    }
+
+    .wrapper__main .main__container .main__content .main__description {
+        width: 89%;
+        margin-left: 0%;
+    }
+
+    .wrapper__main .main__container .main__content .main__title {
+        margin-bottom: 70px;
+    }
+
+    .wrapper__main .main__container .main__img .img__star {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        left: -42px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        left: -44px;
+    }
+
+    .wrapper__main .main__container .main__content .main__description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::before {
+        left: -27px;
+    }
+    .wrapper__main .main__container .main__content .main__title .title__white .title__white-threadTwo::after {
+        left: -29px;
+    }
+}
