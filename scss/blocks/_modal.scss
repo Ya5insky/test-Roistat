@@ -41,7 +41,7 @@
                 right: 40px;
                 height: 32px;
                 width: 32px;
-                background-image: url(../../img/favicon/close-icon.svg);
+                background-image: url(../../img/favicon/close-icons.svg);
                 background-size: cover;
                 background-repeat: no-repeat;
             }
@@ -139,7 +139,7 @@
                             border: 1px solid $lightGray;
                         }
                         .form__checkbox:checked + label::before {
-                           background: url(../../img/favicon/checkbox.svg);
+                           background: url(../../img/favicon/checkbox-modal.svg);
                            background-size: 80%;
                            background-repeat: no-repeat;
                            background-position: center center;
