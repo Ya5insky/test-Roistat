@@ -46,16 +46,25 @@
                 background-repeat: no-repeat;
             }
 
+            .form__title {
+                font-family: "SuisseIntl";
+                font-weight: 600;
+                font-size: 40px;
+                color: $lightGray;
+                margin: 0 0 24px 0;
+            }
+
             .form {
-                &__title {
-                    font-family: "SuisseIntl";
-                    font-weight: 600;
-                    font-size: 40px;
-                    color: $lightGray;
-                    margin: 0 0 24px 0;
-                }
-                &__content {
-                    .content__input {
+                margin: 16px 0 0 0;
+                font-size: 20px;
+                color: #454545;
+                padding: 12px 20px;
+                width: 100%;
+                .input-box {
+                    .input-field[type="text"]{
+                        color: $lightGray;
+                    }
+                    .input-field {
                         margin: 16px 0 0 0;
                         border: 1px solid rgb(149, 149, 149, 0.5);
                         background: linear-gradient(280deg, rgba(164, 164, 164, 0.1), rgba(29, 29, 29, 0.8));
@@ -67,85 +76,87 @@
                         padding: 12px 20px;
                         width: 100%;
                     }
-                    .content__error-message {
-                        color: #FF5858;
-                        position: relative;
-                        line-height: 0px;
-                        opacity: 0;
-                        transition: all .2s;
-                        font-size: 13px;
-                        margin: 8px 0 -8px 0;
-                        background: rgba(255, 255, 255, 0.7);
-                        border-radius: 2px;
-                        padding: 0;
-                        width: max-content;
-                        max-width: 100%;
+                    .error .input-field {
+                        border-color: red;
                     }
-                    .form__btn {
-                        font-family: "Unbounded";
-                        font-weight: 500;
-                        font-size: 16px;
-                        width: 100%;
-                        text-align: center;
-                        color: $white;
-                        padding: 20px 24px;
-                        margin: 24px 0 0 0;
-                        background: $lightBlue;
-                        border-radius: 8px;
-                        cursor: pointer;
-                        transition: .2s all;
-                    }
-
-                    .form__btn:hover {
-                        background: $blue;
-                    }
-
-                    .form__agreement {
-                        margin: 16px 0 0 0;
-                        .form__checkbox {
-                            position: absolute;
-                            z-index: -1;
-                            opacity: 0;
-                        } 
-                        .form__checkbox + label {
-                            display: block;
-                            user-select: none;
-                            line-height: 16px;
-                            padding: 0 10px 0 35px;
-                            font-weight: 400;
-                            position: relative;
-                            font-size: 12px;
-                            color: $lightGray;
-                            opacity: 0.8; 
-                            a {
-                                color: inherit;
-                                text-decoration: underline;
-                            }
-                        }
-                        .form__checkbox + label::before {
-                            content: '';
-                            position: absolute;
-                            left: 0;
-                            top: 3px;
-                            display: inline-block;
-                            width: 24px;
-                            height: 24px;
-                            background: transparent;
-                            border-radius: 2px;
-                            background-repeat: no-repeat;
-                            background-position: center center;
-                            background-size: 13px;
-                            cursor: pointer;
-                            border: 1px solid $lightGray;
-                        }
-                        .form__checkbox:checked + label::before {
-                           background: url(../../img/favicon/checkbox-modal.svg);
-                           background-size: 80%;
-                           background-repeat: no-repeat;
-                           background-position: center center;
-                        }
+                    
+                    .error-label {
+                        display: block;
+                        color: $red;
+                        margin-bottom: 10px;
                     }
                 }
+
+                .send-btn {
+                    font-family: "Unbounded";
+                    font-weight: 500;
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: center;
+                    color: $white;
+                    padding: 20px 24px;
+                    margin: 24px 0 0 0;
+                    background: $lightBlue;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: .2s all;
+                }
+
+                .send-btn:hover {
+                    background: $blue;
+                }
+
+                .form__agreement {
+                    margin: 16px 0 0 0;
+                    .form__checkbox {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                    } 
+
+                    .error-label {
+                        display: block;
+                        color: $red;
+                        margin-top: 10px;
+                    }
+                    .form__checkbox + label {
+                        display: block;
+                        user-select: none;
+                        line-height: 16px;
+                        padding: 0 10px 0 35px;
+                        font-weight: 400;
+                        position: relative;
+                        font-size: 12px;
+                        color: $lightGray;
+                        opacity: 0.8; 
+                        a {
+                            color: inherit;
+                            text-decoration: underline;
+                        }
+                    }
+                    .form__checkbox + label::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 3px;
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background: transparent;
+                        border-radius: 2px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 13px;
+                        cursor: pointer;
+                        border: 1px solid $lightGray;
+                    }
+                    .form__checkbox:checked + label::before {
+                       background: url(../../img/favicon/checkbox-modal.svg);
+                       background-size: 80%;
+                       background-repeat: no-repeat;
+                       background-position: center center;
+                    }
+                }       
             }
         }
     }

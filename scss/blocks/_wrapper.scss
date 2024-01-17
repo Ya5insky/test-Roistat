@@ -27,6 +27,33 @@
                 padding: 18px 40px;
                 position: relative;
                 overflow: hidden;
+                .header__nav__open {
+                    height: 130px;
+                    flex-direction: column;
+                    align-items: normal;
+                    display: flex;
+                    justify-content: space-between;
+                    .nav__logo {
+                        width: 112px;
+                    }
+                    .nav__site {
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        li {
+                            a {
+                                font-family: 'Unbounded';
+                                font-size: 18px;
+                                font-weight: 500;
+                                transition-duration: 0.3s;
+                                color: $white;
+                            }
+                            :hover {
+                                color: $lightBlue;
+                            }
+                        }
+                    }
+                }
                 .header__nav {
                     display: flex;
                     justify-content: space-between;
@@ -49,7 +76,6 @@
                                 color: $lightBlue;
                             }
                         }
-
                     }
                 }
                 .header__burger-btn {
@@ -68,13 +94,31 @@
                         position: absolute;
                         top: 18px;
                         right: 0;
-                        transition: .2s all;
+                        transition: transform 0.3s, width 0.3s, top 0.3s;
                     }
-                    .burger__line_bottom {
-                        width: 16px;
-                        top: 28px;
-                    }
-                }    
+                    
+                }
+                .burger__closed .burger__line_top {
+                    transform: none;
+                    width: 32px;
+                    top: 18px;
+                }  
+                .burger__closed .burger__line_bottom {
+                    transform: none;
+                    width: 16px;
+                    top: 28px;
+                }  
+
+                .burger__open .burger__line_bottom {
+                    transform: rotate(135deg);
+                    width: 25px;
+                    top: 23px;
+                }
+                .burger__open .burger__line_top {
+                    transform: rotate(45deg);
+                    width: 25px;
+                    top: 23px;
+                }
             }
         }
     }

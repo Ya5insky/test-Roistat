@@ -13,20 +13,23 @@
             <div class="modal__content">
                 <div class="modal__message">
                     <div class="message__close"></div>
-                    <form class="form">
-                        <h2 class="form__title">Регистрация</h2>
-                        <div class="form__content">
-                            <input type="text" class="input__name content__input" placeholder="Имя">
-                            <div class="content__error-message error__message-name"></div>
-                            <input type="text" class="input__company content__input" placeholder="Сайт компании">
-                            <input type="text" class="input__tel content__input" placeholder="Телефон">
-                            <div class="content__error-message error__message-tel"></div>
-                            <button class="form__btn">Получить код</button>
-                            <div class="agreement__container form__agreement">
-                                <input id="agreement" class="form__checkbox" type="checkbox">
-                                <label for="agreement">Отправляя сведения через электронную форму, вы даете согласие на обработку персональных данных, в том числе сбор, хранение и передачу третьим лицам представленной вами информации на условиях <a target="_blank" href="https://roistat.com/ru/privacy">Политики обработки персональных данных</a> .
-                                </label>
-                            </div>
+                    <h2 class="form__title">Регистрация</h2>
+                    <form action="./php/process_form.php" class="form" id="add-form" method="POST">
+                        <div class="input-box">
+                            <input data-required="true" name="name" type="text" class="input-field" placeholder="Имя">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="company_website" class="input-field" placeholder="Сайт компании">
+                        </div>
+                        <div class="input-box">
+                            <input data-required="true" name="phone" data-max-length="11" data-min-length="6" type="text" class="input-field" placeholder="Телефон">
+                        </div>
+            
+                        <button type="submit" class="send-btn">Получить код</button>
+    
+                        <div class="agreement__container form__agreement">
+                            <input data-required="true" id="agreement" name="'agreement" class="form__checkbox" type="checkbox">
+                            <label for="agreement">Отправляя сведения через электронную форму, вы даете согласие на обработку персональных данных, в том числе сбор, хранение и передачу третьим лицам представленной вами информации на условиях <a target="_blank" href="https://roistat.com/ru/privacy">Политики обработки персональных данных.</a></label>
                         </div>
                     </form>
                 </div>
@@ -36,16 +39,16 @@
         <div class="wrapper__header">
             <div class="header__container container">
                 <div class="header__backgroud">
-                    <div class="header__nav">
-                        <img src="./img/logo/logo.svg" alt="" class="nav__logo">
-                        <ul class="nav__site">
-                            <li><a class="js-header-a" href="">Наши предложения</a></li>
-                            <li><a class="js-header-a" href="">Цены</a></li>
-                        </ul>
+                    <div class="header__nav" id="headerNav">
+                      <img src="./img/logo/logo.svg" alt="" class="nav__logo">
+                      <ul class="nav__site">
+                        <li><a class="js-header-a" href="">Наши предложения</a></li>
+                        <li><a class="js-header-a" href="">Цены</a></li>
+                      </ul>
                     </div>
-                    <div class="header__burger-btn burger" id="burgerBtn">
-                        <div class="burger__line burger__line_top"></div>
-                        <div class="burger__line burger__line_bottom"></div>
+                    <div class="header__burger-btn burger__closed burger" id="burgerBtn">
+                      <div class="burger__line burger__line_top"></div>
+                      <div class="burger__line burger__line_bottom"></div>
                     </div>
                 </div>
             </div>

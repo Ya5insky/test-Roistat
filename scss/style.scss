@@ -55,4 +55,40 @@ li {
     }
 }
 
+.nav__site {
+    display: none;
+  }
 
+  .burger__line {
+    transition: transform 0.3s, width 0.3s, top 0.3s;
+  }
+
+  .burger__open .burger__line_top {
+    transform: rotate(45deg);
+    width: 25px;
+    top: 23px;
+  }
+
+  .burger__open .burger__line_bottom {
+    transform: rotate(135deg);
+    width: 25px;
+    top: 23px;
+  }
+
+  .burger__closed .burger__line_top {
+    transform: none;
+    width: 32px;
+    top: 18px;
+  }
+
+  .burger__closed .burger__line_bottom {
+    transform: none;
+    width: 16px;
+    top: 28px;
+  }
+
+  .header__nav__open {
+    height: 130px;
+    flex-direction: column;
+    align-items: normal;
+  }

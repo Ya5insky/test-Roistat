@@ -17,34 +17,116 @@ overlay.addEventListener('click', function() {
 });
 
 
+function validation(form) {
+    function removeError(input) {
+        const parent = input.parentNode;
+
+        if (parent.classList.contains('error')) {
+            parent.querySelector('.error-label').remove();
+            parent.classList.remove('error');
+        }
+    }
+
+    function createError(input, text) {
+        const parent = input.parentNode;
+        const errorLabel = document.createElement('label');
+
+        errorLabel.classList.add('error-label');
+        errorLabel.textContent = text;
+
+        parent.classList.add('error');
+
+        parent.append(errorLabel);
+    }
+
+    let result = true;
+
+    const allInputs = form.querySelectorAll('input, checkbox');
+
+    for (const input of allInputs) {
+        removeError(input);
+
+        if (input.dataset.minLength) {
+            if (input.value.length < input.dataset.minLength) {
+                removeError(input);
+                createError(input, `Минимальное кол-во символов: ${input.dataset.minLength}`);
+                result = false;
+            }
+        }
+
+        if (input.dataset.maxLength) {
+            if (input.value.length > input.dataset.maxLength) {
+                removeError(input);
+                createError(input, `Максимальное кол-во символов: ${input.dataset.maxLength}`);
+                result = false;
+            }
+        }
+
+        if (input.type === 'checkbox' && input.dataset.required == 'true') {
+            if (!input.checked) {
+                removeError(input);
+                createError(input, 'Необходимо отметить согласие!');
+                result = false;
+            }
+        }
+
+        if (input.type !== 'checkbox' && input.dataset.required == 'true') {
+            if (input.value.trim() === '') {
+                removeError(input);
+                createError(input, 'Поле не заполнено!');
+                result = false;
+            }
+        }
+    }
+
+    return result;
+}
+
+document.getElementById('add-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (validation(this)) {
+        const formData = new FormData(this);
+
+        fetch('./php/process_form.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                this.reset();
+
+                const modal = document.querySelector('.wrapper__modal');
+                modal.style.display = 'none';
+            } else {
+                alert('Произошла ошибка при отправке данных.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при отправке данных:', error);
+            alert('Произошла ошибка при отправке данных.');
+        });
+    }
+});
 
 document.getElementById('burgerBtn').addEventListener('click', function() {
     var navSite = document.querySelector('.nav__site');
-    var burgerTop = document.querySelector('.burger__line_top');
-    var burgerBottom = document.querySelector('.burger__line_bottom');
-    var headerNav = document.querySelector('.header__nav');
-    
+    var burgerBtn = document.getElementById('burgerBtn');
+    var headerNav = document.getElementById('headerNav');
+
     if (navSite.style.display === 'none') {
       navSite.style.display = 'flex';
-      burgerTop.style.transform = 'rotate(45deg)';
-      burgerBottom.style.transform = 'rotate(135deg)';
-      burgerBottom.style.width = '25px';
-      burgerTop.style.width = '25px';
-      burgerBottom.style.top = '23px';
-      burgerTop.style.top = '23px';
-      headerNav.style.height = '130px';
-      headerNav.style.flexDirection = 'column';
-      headerNav.style.alignItems = 'normal';
+      headerNav.classList.remove('header__nav');
+      burgerBtn.classList.remove('burger__closed');
+      burgerBtn.classList.add('burger__open');
+      headerNav.classList.add('header__nav__open');
     } else {
       navSite.style.display = 'none';
-      burgerTop.style.transform = 'none';
-      burgerBottom.style.transform = 'none';
-      burgerBottom.style.width = '16px';
-      burgerTop.style.width = '32px';
-      burgerBottom.style.top = '28px';
-      burgerTop.style.top = '18px';
-      headerNav.style.height = null;
-      headerNav.style.flexDirection = null;
-      headerNav.style.alignItems = null;
+      burgerBtn.classList.remove('burger__open');
+      headerNav.classList.remove('header__nav__open');
+      burgerBtn.classList.add('burger__closed');
+      headerNav.classList.add('header__nav');
     }
 });
+
